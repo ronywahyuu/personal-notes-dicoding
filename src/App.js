@@ -4,7 +4,7 @@ import Header from './components/header/Header';
 import './App.css';
 // import NotesContainer from './components/body/NotesContainer';
 
-import {getInitialData} from './utils/initial-data';
+import {getInitialData} from './utils/index';
 import NoteList from './components/body/NoteList';
 import Search from './components/body/Search';
 import AddNotesModal from './components/body/AddNotesModal';
@@ -47,9 +47,10 @@ class App extends Component {
   }
 
   addNotes({title, text}){
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const localDateTime = new Date().toLocaleDateString('id-ID', options);
-    console.log(title, text)
+    // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    // const localDateTime = new Date().toLocaleDateString('id-ID', options);
+    const localDateTime = new Date().toLocaleString()
+    // console.log(title, text)
     this.setState({
       notes : [...this.state.notes, {
         id : +new Date(),
@@ -65,7 +66,7 @@ class App extends Component {
 
   // open add notes modal method
   openAddNotesModal(){
-    console.log('open add notes modal')
+    // console.log('open add notes modal')
     this.setState({
       openModal : true
     })
@@ -74,7 +75,7 @@ class App extends Component {
   
   // close add notes modal method
   closeAddNotesModal(){
-    console.log('close add notes modal')
+    // console.log('close add notes modal')
     this.setState({
       openModal : false
     })
@@ -191,12 +192,6 @@ class App extends Component {
             addToUnarchived={this.addToUnarchived}
             />
         </main>
-        {/* <NotesContainer 
-          activeTab={this.state.activeTab}
-          notes = {this.state.notes}
-
-          isArchived = {this.state.isArchived}
-          /> */}
       </Fragment>
     )
   }

@@ -21,7 +21,6 @@ class AddNotesModal extends React.Component {
 
 
     onTitleChange(e){
-        console.log(e.target.value);
         this.setState({
             // title: e.target.value,
             title: e.target.value.slice(0, 49),

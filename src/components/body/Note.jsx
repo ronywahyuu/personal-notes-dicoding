@@ -7,12 +7,13 @@ import "../styles/body.css";
 import UnarchiveButton from "./UnarchiveButton";
 
 const Note = ({ id, title, body, createdAt, archived, addToArchive, addToUnarchived, deleteNotes, activeTab}) => {
+    const localTime = new Date(createdAt).toLocaleString();
     return (
         <div id={id} className={`note-item ${archived ? "archived" : ''}`}>
             <div className="note-item__text">
                 <div className="note-item__heading">
                     <h1 className="note-item__title"> {title} </h1>{" "}
-                    <span className="note-item__date"> {createdAt} </span>{" "}
+                    <span className="note-item__date"> {localTime} </span>{" "}
                 </div>{" "}
                 <div className="note-item__body">
                     <p>
