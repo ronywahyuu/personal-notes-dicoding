@@ -7,7 +7,7 @@ import '../styles/header.css';
 const Header = ({activeTab, switchTabHandler, openAddNotesModal, closeAddNotesModal}) => {
     return (
         <header className="header ">
-            <h1 className="header__text-heading">My Personal Notes</h1>
+            <h1 className="header__text-heading">Notelify</h1>
             <Nav 
                 activeTab={activeTab}
                 switchTabHandler={switchTabHandler}
